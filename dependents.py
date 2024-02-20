@@ -1,4 +1,4 @@
-# Usage: ./phd.sh GITHUB_TOKEN github.com/some/repo
+# Usage: python3 ./dependents.py github.com/some/repo
 
 import requests
 import sys
