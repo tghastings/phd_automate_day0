@@ -22,8 +22,7 @@ if response.status_code == 200:
     # Parse the HTML content of the page
     soup = BeautifulSoup(response.text, 'html.parser')
 
-    # Locate the a element first (this example uses a hypothetical class name or id, you will need to adjust it)
-    # and then find the span inside it. You might need to adjust the selector based on the actual page structure.
+    # Locate the a element first and then find the a href inside.
     a_href = '/' + parts[1] + '/network/dependents?dependent_type=REPOSITORY'
     a_element = soup.find('a', href = a_href)
     if a_element:
@@ -54,10 +53,6 @@ scorecard_scores = float(scorecard_scores)
 total = scorecard_scores * 8
 all_together = ((score * 10) + total) / 9
 all_together = round(all_together, 2)
-
-# print("The average scorecard score is", scorecard_scores)
-# print("The total from the scorecard is", total)
-# print("The avg score from the scorecard and dependents is", all_together)
 
 if all_together >= 7.5:
     print("Low Risk")
